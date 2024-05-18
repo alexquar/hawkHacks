@@ -7,10 +7,12 @@ class UsersController < ApplicationController
 
   def sign_in
     @user = User.find_by!(email: params[:email])
+    puts params
+    puts @user.inspect
     if params[:pass] == @user.password
       render "users/show"
     else
-      head :not_found
+      head :unprocessable_entity
     end
   end
 end
