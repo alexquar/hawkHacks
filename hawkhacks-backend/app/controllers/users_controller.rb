@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def sign_in
     @user = User.find_by!(email: params[:email])
-    if params[:password] == @user.password
+    if params[:pass] == @user.password
       render "users/show"
     else
       head :not_found
