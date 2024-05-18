@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a97196b2-c884-4a86-941b-40882480bfd1" name="Changes" comment="Replaced backend">
+      <change beforePath="$PROJECT_DIR$/backend/log/development.log" beforeDir="false" afterPath="$PROJECT_DIR$/backend/log/development.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/log/test.log" beforeDir="false" afterPath="$PROJECT_DIR$/backend/log/test.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tmp/cache/bootsnap/compile-cache-iseq/16/5ae80a3f67ea9f" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tmp/cache/bootsnap/compile-cache-iseq/16/5ae80a3f67ea9f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tmp/cache/bootsnap/compile-cache-iseq/5d/a58f3a972d933b" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tmp/cache/bootsnap/compile-cache-iseq/5d/a58f3a972d933b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tmp/cache/bootsnap/compile-cache-iseq/a4/fdffb141793369" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tmp/cache/bootsnap/compile-cache-iseq/a4/fdffb141793369" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tmp/cache/bootsnap/compile-cache-iseq/aa/59122dbec36320" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tmp/cache/bootsnap/compile-cache-iseq/aa/59122dbec36320" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tmp/cache/bootsnap/compile-cache-iseq/b1/ac201066ee82e3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tmp/cache/bootsnap/compile-cache-iseq/b1/ac201066ee82e3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tmp/cache/bootsnap/compile-cache-iseq/e7/128e5320fe5f83" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tmp/cache/bootsnap/compile-cache-iseq/e7/128e5320fe5f83" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tmp/cache/bootsnap/load-path-cache" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tmp/cache/bootsnap/load-path-cache" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/backend" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2gceaSaWwAPzzNENChWMJJIm2Kt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/janef/RubymineProjects/hawkHacks",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ruby.structure.view.model.defaults.configured": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RdControllerToolWindowsLayoutState" isNewUi="true">
+    <layout>
+      <window_info id="Space Code Reviews" show_stripe_button="false" />
+      <window_info id="Bookmarks" show_stripe_button="false" side_tool="true" />
+      <window_info id="Merge Requests" show_stripe_button="false" />
+      <window_info id="Commit_Guest" show_stripe_button="false" />
+      <window_info id="Pull Requests" show_stripe_button="false" />
+      <window_info id="Learn" show_stripe_button="false" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.19444445" />
+      <window_info active="true" id="Commit" order="1" visible="true" weight="0.19444445" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TypeScript" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TODO" show_stripe_button="false" />
+      <window_info anchor="bottom" id="File Transfer" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Find" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Problems" order="1" />
+      <window_info anchor="bottom" id="Problems View" order="2" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.19808125" />
+      <window_info anchor="bottom" id="Services" order="4" />
+      <window_info anchor="right" id="Endpoints" show_stripe_button="false" />
+      <window_info anchor="right" content_ui="combo" id="Notifications" order="0" weight="0.25" />
+      <window_info anchor="right" id="AIAssistant" order="1" weight="0.25" />
+      <window_info anchor="right" id="Database" order="2" weight="0.25" />
+      <window_info anchor="right" id="Gradle" order="3" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/app/views" />
+      <recent name="$PROJECT_DIR$/backend" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a97196b2-c884-4a86-941b-40882480bfd1" name="Changes" comment="" />
+      <created>1716001356239</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1716001356239</updated>
+      <workItem from="1716001357323" duration="12720000" />
+      <workItem from="1716061776592" duration="116000" />
+    </task>
+    <task id="LOCAL-00001" summary="Set up models on back end">
+      <option name="closed" value="true" />
+      <created>1716001523967</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716001523967</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added test API for event creation">
+      <option name="closed" value="true" />
+      <created>1716005371769</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716005371769</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Set up for Render deployement">
+      <option name="closed" value="true" />
+      <created>1716030544588</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1716030544588</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added render.yaml file">
+      <option name="closed" value="true" />
+      <created>1716030662249</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1716030662249</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Created simple events index API">
+      <option name="closed" value="true" />
+      <created>1716031926804</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1716031926804</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added logs to events index API">
+      <option name="closed" value="true" />
+      <created>1716033037049</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716033037049</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Hopefully fixed prod database?">
+      <option name="closed" value="true" />
+      <created>1716033990077</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1716033990077</updated>
+    </task>
+    <task id="LOCAL-00008" summary="??">
+      <option name="closed" value="true" />
+      <created>1716034449089</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1716034449089</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Expanded events create API">
+      <option name="closed" value="true" />
+      <created>1716036024849</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1716036024849</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fixed event view">
+      <option name="closed" value="true" />
+      <created>1716036193764</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1716036193764</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added cors">
+      <option name="closed" value="true" />
+      <created>1716036632427</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1716036632427</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added logs to event creation">
+      <option name="closed" value="true" />
+      <created>1716037487912</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1716037487912</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Removed theme for testing">
+      <option name="closed" value="true" />
+      <created>1716037856668</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1716037856668</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Switched theme from enum to string">
+      <option name="closed" value="true" />
+      <created>1716038832461</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1716038832461</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added parsing to start_at and end_at">
+      <option name="closed" value="true" />
+      <created>1716039818121</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1716039818121</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Added delete API">
+      <option name="closed" value="true" />
+      <created>1716040493099</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1716040493099</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Attempted to fix devise error throwing">
+      <option name="closed" value="true" />
+      <created>1716042235033</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1716042235033</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Attempted to fix devise error throwing again">
+      <option name="closed" value="true" />
+      <created>1716043339766</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1716043339766</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Replaced backend">
+      <option name="closed" value="true" />
+      <created>1716061830113</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1716061830114</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Set up models on back end" />
+    <MESSAGE value="Added test API for event creation" />
+    <MESSAGE value="Set up for Render deployement" />
+    <MESSAGE value="Added render.yaml file" />
+    <MESSAGE value="Created simple events index API" />
+    <MESSAGE value="Added logs to events index API" />
+    <MESSAGE value="Hopefully fixed prod database?" />
+    <MESSAGE value="??" />
+    <MESSAGE value="Expanded events create API" />
+    <MESSAGE value="Fixed event view" />
+    <MESSAGE value="Added cors" />
+    <MESSAGE value="Added logs to event creation" />
+    <MESSAGE value="Removed theme for testing" />
+    <MESSAGE value="Switched theme from enum to string" />
+    <MESSAGE value="Added parsing to start_at and end_at" />
+    <MESSAGE value="Added delete API" />
+    <MESSAGE value="Attempted to fix devise error throwing" />
+    <MESSAGE value="Attempted to fix devise error throwing again" />
+    <MESSAGE value="Replaced backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Replaced backend" />
+  </component>
+</project>

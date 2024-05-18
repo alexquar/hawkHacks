@@ -1,0 +1,9 @@
+json.id event.id
+json.user_id event.user_id
+json.title event.title
+json.description event.description
+json.start_at event.start_at
+json.end_at event.end_at
+json.theme event.theme
+json.longitude event.longitude
+json.latitude event.latitude
