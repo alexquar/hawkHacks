@@ -35,6 +35,8 @@ RSpec.describe "Events", type: :request do
   end
   describe "GET /show" do
     it "should show a event" do
+      @user = User.create!(email: "fdfd", pass: "fddd")
+      puts @user.inspect
       @event = Event.create!(title: "blah", description: "bleh")
       get "/api/events/#{@event.id}", headers: { "ACCEPT" => "application/json"}
     end
