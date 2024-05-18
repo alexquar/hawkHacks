@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f4d2f66-37ad-483b-aa8a-9e77fdfd9b79" name="Changes" comment="Deleted old backend">
-      <change afterPath="$PROJECT_DIR$/../hawkhacks-backend/app/assets/config/manifest.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hawkhacks-backend/app/assets/images/.keep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hawkhacks-backend/app/assets/stylesheets/application.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="1f4d2f66-37ad-483b-aa8a-9e77fdfd9b79" name="Changes" comment="Deleted old backend" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
