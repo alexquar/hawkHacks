@@ -4,9 +4,13 @@ import { Link } from 'react-router-dom'
 export default function Signup() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [isPending, setIsPending] = useState(false)
+  const [error, setError] = useState(null)
   const { dispatch } = useAuthContext()
   const handleSubmit = async (e)=>{
     e.preventDefault()
+    setIsPending(true)
+    setError(null)
     const user = {email, pass:password}
     console.log(user)
     const res = await fetch('https://mysite-isdc.onrender.com/users/sign_in', {
@@ -21,7 +25,9 @@ export default function Signup() {
     const json = await res.json()
 
     console.log(json)
+    setIsPending(false)
     dispatch({ type: 'LOGIN', payload: json })
+    setError('Could not login, try again...')
 }
 
   return (
@@ -46,7 +52,10 @@ export default function Signup() {
         />
       </label>
       <p className="my-5 block sm:hidden">Don't have an account? Signup <Link to='/signup' className='text-accent'>here</Link>.</p>
-      <button className="btn-primary">Submit</button>
+    {!isPending &&  <button className="btn-primary">Submit</button>}
+    {isPending &&  <button className="btn-primary" disabled>Loading...</button>}
+      <p className="my-5 text-red-600 block sm:hidden">{error}</p>
+
     </form>
   )
 }

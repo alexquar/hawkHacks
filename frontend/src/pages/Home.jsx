@@ -1,7 +1,7 @@
 import React, { useId } from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
-
+import { useFilterContext } from '../hooks/useFilterContext';
 import {
   APIProvider,
   Map,
@@ -11,6 +11,8 @@ import {
 } from "@vis.gl/react-google-maps";
 import { useAuthContext } from '../hooks/useAuthContext';
 export default function Home() {
+  const {filter} = useFilterContext()
+  console.log(filter)
 const {user} = useAuthContext()
 const uid = user.id
   const position = { lat: 43.4723, lng: -80.5449};
