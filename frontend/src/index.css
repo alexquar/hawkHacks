@@ -8,10 +8,7 @@
 body {
   margin: 0;
   font-family: "Poppins";
-}
-body {
-  background: #EBEBEB;
-  @apply text-gray-500;
+  @apply bg-background;
 }
 
 

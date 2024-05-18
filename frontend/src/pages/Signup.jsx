@@ -9,7 +9,8 @@ export default function Signup() {
     console.log(email, password)
   }
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='mt-10 w-1/2' onSubmit={handleSubmit}>
+        <h1 className='text-center text-3xl m-3'>Signup</h1>
       <label>
         <span>User Name:</span>
         <input 
