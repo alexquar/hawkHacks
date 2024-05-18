@@ -1,13 +1,115 @@
+/* google font */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Poppins";
+}
+body {
+  background: #EBEBEB;
+  @apply text-gray-500;
+}
+h1, h2 {
+  @apply font-bold text-lg;
+}
+main {
+  @apply max-w-5xl mx-auto px-8;
+}
+main > h2 {
+  @apply mb-4 pb-2 ;
+}
+p > a {
+  @apply underline;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* nav styles */
+nav {
+  @apply p-10 flex items-center gap-5  mx-auto w-full;
 }
+nav a, nav span {
+  @apply text-gray-500;
+}
+nav a:hover {
+  @apply text-black;
+}
+main nav {
+  @apply border-0;
+}
+
+/* button styles */
+button {
+  @apply 
+    px-3 py-2 
+    rounded-sm 
+    flex justify-between items-center gap-2
+    text-sm;
+}
+button:hover {
+  @apply bg-opacity-90;
+}
+.btn-primary {
+  @apply bg-primary text-white rounded-lg;
+}
+.btn-primary:hover {
+  @apply text-primary bg-white;
+}
+.btn-secondary {
+  @apply bg-gray-200 text-gray-900;
+}
+
+/* form styles */
+form {
+  @apply 
+    py-4 px-7 
+    bg-primary 
+    bg-opacity-5 
+    rounded-md 
+    block 
+    mx-auto 
+    min-w-fit w-1/4;
+}
+form label {
+  @apply block;
+}
+form input,
+form textarea,
+form select {
+  @apply 
+    block 
+    mt-2 my-4 px-2 py-1 
+    rounded-sm w-full;
+}
+form button {
+  @apply block mx-auto;
+}
+
+/* feedback styles */
+.error {
+  @apply 
+    border-2 
+    border-red-500 
+    bg-red-300
+    text-red-800 
+    py-1 px-2 
+    rounded-sm
+    block
+    max-w-fit
+    my-4 mx-auto;
+}
+
+/* card styles */
+.card {
+  @apply 
+    bg-white 
+    shadow-sm 
+    rounded-md 
+    py-3 px-4 my-4 
+    relative 
+    overflow-hidden;
+}
+
+
