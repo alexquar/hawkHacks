@@ -1,21 +1,48 @@
 import { useState } from 'react'
+import { useAuthContext } from '../hooks/useAuthContext'
 
 export default function Signup() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [userName, setUserName] = useState('')
-  const handleSubmit = (e)=>{
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const { dispatch } = useAuthContext()
+  const handleSubmit = async (e)=>{
     e.preventDefault()
-    console.log(email, password)
+    const user = {email, pass:password, first_name:firstName, last_name:lastName}
+    console.log(user)
+    const res = await fetch('https://mysite-isdc.onrender.com/users/sign_up', {
+        method:'POST',
+        body : JSON.stringify(user),
+        headers : {
+            'Content-Type':'application/json',
+            "Accept": "application/json",
+        }
+    })
+
+    const json = await res.json()
+console.log(json)
+dispatch({ type: 'LOGIN', payload: json })
+
   }
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='mt-10 w-1/2' onSubmit={handleSubmit}>
+        <h1 className='text-center text-3xl m-3'>Signup</h1>
       <label>
-        <span>User Name:</span>
+        <span>First Name:</span>
         <input 
           type="text" 
-          onChange={(e) => setUserName(e.target.value)}
-          value={userName}
+          onChange={(e) => setFirstName(e.target.value)}
+          value={firstName}
+          required 
+        />
+      </label>
+      <label>
+        <span>Last Name:</span>
+        <input 
+          type="text" 
+          onChange={(e) => setLastName(e.target.value)}
+          value={lastName}
           required 
         />
       </label>
