@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useId } from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
 
@@ -11,7 +11,8 @@ import {
 } from "@vis.gl/react-google-maps";
 import { useAuthContext } from '../hooks/useAuthContext';
 export default function Home() {
-
+const {user} = useAuthContext()
+const uid = user.id
   const position = { lat: 43.4723, lng: -80.5449};
   const flipOpen = (id) => {
     setUpdatedEvents(updatedEvents.map(tag => {
@@ -83,12 +84,12 @@ export default function Home() {
     try {
       const response = await fetch(`https://mysite-isdc.onrender.com/api/events/${id}`, {
         method: 'DELETE',
+        body : JSON.stringify({user_id:uid}),
         headers: {
+          'Content-Type':'application/json',
           "Accept": "application/json",
         }
       });
-      const events = await response.json();
-      console.log(events);
       setUpdatedEvents(updatedEvents.filter(event => event.id !== id))
     } catch (error) {
       console.error(error);
@@ -118,7 +119,7 @@ export default function Home() {
                 <p className=' my-3' >{tag.description}</p>
                 <p className=' my-3'>Starts: {format(tag.start_at)}</p>
                 <p className=' my-3'>Ends: {format(tag.end_at)}</p>
-                <button onClick={() => deleteEvent(tag.id)} className='btn-primary m-3'>Delete Event</button>
+                <button onClick={() => deleteEvent(tag.id)} className='btn-primary m-5'>Delete Event</button>
               </div>
             </InfoWindow> }
             </div>

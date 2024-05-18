@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
+import {useNavigate} from "react-router-dom"
+
 import {
     APIProvider,
     Map,
@@ -26,6 +28,7 @@ const options = [
 const markerPosition = { lat: 43.4723, lng: -80.5449 };
 export default function NewEvent() {
   const {user} = useAuthContext()
+  const navigate = useNavigate()
   console.log(user)
 const [title,setTitle] = useState('')
 const [description,setDescription] = useState('')
@@ -78,7 +81,7 @@ const handleSubmit = async (e) =>{
         console.log('error')
     } 
     console.log('success')
-
+    navigate('/')
 }
   return (
     <form className='mt-10 w-full md:w-1/2' onSubmit={handleSubmit}>

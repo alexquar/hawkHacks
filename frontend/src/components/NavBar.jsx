@@ -3,12 +3,11 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link } from "react-router-dom"
 import logo from '../assets/logo.png'
-
+import { useAuthContext } from '../hooks/useAuthContext'
 const navigation = [
   { name: 'About Us', href: '/about' },
   { name: 'Add Event', href: '/newEvent' },
   { name: 'Filter Events', href: '/filterEvent' },
-
 ]
 
 function classNames(...classes) {
@@ -16,6 +15,11 @@ function classNames(...classes) {
 }
 
 export default function Example() {
+  const { dispatch } = useAuthContext() 
+  const logout = () => {
+   
+        dispatch({ type: 'LOGOUT' })
+  }
   return (
     <Disclosure as="nav" className="bg-secondary">
       {({ open }) => (
@@ -100,6 +104,7 @@ export default function Example() {
                         {({ active }) => (
                           <a
                             href="#"
+                            onClick={logout}
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Sign out
