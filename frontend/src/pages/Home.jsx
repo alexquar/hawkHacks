@@ -90,11 +90,17 @@ export default function Home() {
             <span className='text-3xl'>{tag.image}</span>
             </AdvancedMarker>
           {tag.open &&  <InfoWindow position={tag.location} onCloseClick={()=>flipOpen(tag.id)}>
-              <div>
-                <h3 className='text-3xl'>{tag.title}</h3>
-                <p>{tag.description}</p>
-                <p>Starts: {format(tag.start_at)}</p>
-                <p>Ends: {format(tag.end_at)}</p>
+              <div className='bg-white
+              shadow-primary 
+    shadow-md 
+    rounded-md 
+    py-3 px-4 my-4 
+    relative 
+    overflow-hidden text-center'>
+                <h1 className='text-3xl text-primary my-3'>{tag.title}</h1>
+                <p className=' my-3' >{tag.description}</p>
+                <p className=' my-3'>Starts: {format(tag.start_at)}</p>
+                <p className=' my-3'>Ends: {format(tag.end_at)}</p>
               </div>
             </InfoWindow> }
             </div>

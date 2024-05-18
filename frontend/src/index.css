@@ -79,11 +79,15 @@ form button {
 .card {
   @apply 
     bg-white 
-    shadow-sm 
+    shadow-accent
+    shadow-md 
     rounded-md 
     py-3 px-4 my-4 
     relative 
     overflow-hidden;
+    h1{
+     @apply text-accent
+    }
 }
 
 
