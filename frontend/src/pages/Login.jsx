@@ -3,10 +3,26 @@ import { useState } from 'react'
 export default function Signup() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const handleSubmit = (e)=>{
+  const handleSubmit = async (e)=>{
     e.preventDefault()
-    console.log(email, password)
-  }
+    const user = {email, password}
+    const res = await fetch('https://mysite-isdc.onrender.com/users/sign_in', {
+        method:'POST',
+        body : JSON.stringify(user),
+        headers : {
+            'Content-Type':'application/json',
+            "Accept": "application/json",
+        }
+    })
+
+    const json = await res.json()
+    if(!res.ok){
+        console.log(json)
+    } 
+    console.log('success')
+
+}
+
   return (
     <form className='mt-10 w-1/2' onSubmit={handleSubmit}>
       <h1 className='text-center text-3xl m-3'>Login</h1>

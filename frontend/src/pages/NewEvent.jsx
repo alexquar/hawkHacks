@@ -20,6 +20,7 @@ const options = [
     { value: 'health', label: 'Health' },
     { value: 'fashion', label: 'Fashion' },
     { value: 'travel', label: 'Travel' },
+    { value: 'goose', label: 'Goose' },
 ];
 const markerPosition = { lat: 43.4723, lng: -80.5449 };
 export default function NewEvent() {

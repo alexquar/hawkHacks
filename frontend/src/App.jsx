@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import NewEvent from './pages/NewEvent';
 import { Navigate } from 'react-router-dom';
 import About from './pages/About';
+import Filter from './pages/Filter';
 function App() {
   return (
     <div className="App">
@@ -20,6 +21,7 @@ function App() {
 <Route path='/about' element={<About />} />
 <Route path='/signup' element={<Signup />} />
 <Route path='/login' element={<Login />} />
+<Route path='/filterEvents' element={<Filter />} />
 </Routes>
 </div>
 </BrowserRouter>

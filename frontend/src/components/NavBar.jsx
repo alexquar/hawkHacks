@@ -5,12 +5,12 @@ import { Link } from "react-router-dom"
 import logo from '../assets/logo.png'
 
 const navigation = [
-  { name: 'Home', href: '/' },
   { name: 'Signup', href: '/signup' },
   { name: 'Login', href: '/login' },
-  { name: 'About', href: '/about' },
-  { name: 'Add', href: '/add' },
-  { name: 'View', href: '/view' },
+  { name: 'About Us', href: '/about' },
+  { name: 'Add Event', href: '/newEvent' },
+  { name: 'Filter Events', href: '/filtetEvent' },
+
 ]
 
 function classNames(...classes) {
