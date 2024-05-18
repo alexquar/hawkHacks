@@ -7,12 +7,8 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all.where("end_at >= ?", DateTime.now)
-    puts params
-    puts @events
-    if params[:filter].present?
-      puts "present"
+    if params[:filter] != "all"
       @events = @events.where(theme: params[:filter])
-      puts @events
     end
     @total = @events.count
     render "events/index"
