@@ -19,7 +19,7 @@ RSpec.describe "Events", type: :request do
       @event2 = Event.create!(title: "2", description: "2", end_at: DateTime.now + 15.minutes)
     end
     it "should get events" do
-      get "/api/events", headers: {"ACCEPT" => "application/json"}
+      get "/api/events", params: { filter: nil }, headers: {"ACCEPT" => "application/json"}
       expect(JSON.parse(response.body, symbolize_names: true)[:total]).to eq(2)
     end
     it "should get events filtered by theme" do
