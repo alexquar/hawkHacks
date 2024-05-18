@@ -9,26 +9,83 @@ import {
 } from "@vis.gl/react-google-maps";
 export default function Home() {
   const position = { lat: 43.4723, lng: -80.5449};
-  const [open, setOpen] = useState(false);
+  const [tags, setTags] = useState([
+    {
+      id: 1,
+      theme: 'sports',
+      title: 'spikeball game',
+      description: 'A game of spikeball at the park',
+      location: {
+        lat: 43.4726,
+        lng: -80.5450
+      },
+      open: false
+    }, 
+    {
+      id: 2,
+      theme: 'food',
+      title: 'cooking class',
+      description: 'Learn to cook delicious meals',
+      location: {
+        lat: 43.4716,
+        lng: -80.5451
+      },
+      open: false
+    },
+    {
+      id: 3,
+      theme: 'music',
+      title: 'concert',
+      description: 'Live music performance',
+      location: {
+        lat: 43.4729,
+        lng: -80.5450
+      },
+      open: false
+    },
+    {
+      id: 4,
+      theme: 'art',
+      title: 'painting workshop',
+      description: 'Create your own masterpiece',
+      location: {
+        lat: 43.4726,
+        lng: -80.5448
+      },
+      open: false
+    }
+  ])
+  const flipOpen = (id) => {
+    setTags(tags.map(tag => {
+      if(tag.id === id){
+        tag.open = !tag.open
+      }
+      return tag
+    }))
+  }
   return (
     
     <div className='flex justify-center flex-col'>
        <APIProvider apiKey={'AIzaSyAoD_LbQQXbvMnByd0fzqzweDXOjOvjylc'} className='m-5'>
       <div style={{ height: "75dvh", width: "100%" }}>
         <Map defaultZoom={15} defaultCenter={position} mapId={'2e0f38f7239851a2 '}>
-          <AdvancedMarker position={position} onClick={() => setOpen(true)}>
-            <Pin
-              background={"grey"}
-              borderColor={"green"}
-              glyphColor={"purple"}
-            />
-          </AdvancedMarker>
-
-          {open && (
-            <InfoWindow position={position} onCloseClick={() => setOpen(false)}>
-              <p>I'm in Waterloo</p>
-            </InfoWindow>
-          )}
+          {tags.map(tag => (
+            <div key={tag.id}>
+            <AdvancedMarker position={tag.location} onClick={()=>flipOpen(tag.id)}>
+              <Pin
+                background={"grey"}
+                borderColor={"green"}
+                glyphColor={"purple"}
+              />
+            </AdvancedMarker>
+          {tag.open &&  <InfoWindow position={tag.location} onCloseClick={()=>flipOpen(tag.id)}>
+              <div>
+                <h3>{tag.title}</h3>
+                <p>{tag.description}</p>
+              </div>
+            </InfoWindow> }
+            </div>
+          ))}
         </Map>
       </div>
     </APIProvider>
