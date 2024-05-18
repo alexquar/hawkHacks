@@ -25,7 +25,7 @@ const markerPosition = { lat: 43.4723, lng: -80.5449 };
 export default function NewEvent() {
 const [title,setTitle] = useState('')
 const [description,setDescription] = useState('')
-const [theme,setTheme] = useState('')
+const [themes,setThemes] = useState(null)
 const [long,setLong] = useState(null)
 const [lat,setLat] = useState(null)
 const [startTime,setStartTime] = useState('')
@@ -44,14 +44,36 @@ const handleMapClick = (mapProps) => {
       setSelectedLocation({ lat, lng });
   };
   const onAddLocation = () => {
-    // setLat(selectedLocation.lat);
-    // setLong(selectedLocation.lng);
-    console.log(selectedLocation)
     setMarkerPosition(selectedLocation);
     setShowDialog(false);
   }
-const handleSubmit = (e)=>{
+const handleSubmit = async (e) =>{
     e.preventDefault()
+    const event = {
+        description,
+        start_at: startTime,
+        end_at: endTime,
+        title,
+        theme: themes.value,
+        latitude: markerPosition.lat,
+        longitude: markerPosition.lng
+    }
+    console.log(event)
+    const res = await fetch('https://mysite-isdc.onrender.com/api/events', {
+        method:'POST',
+        body : JSON.stringify(event),
+        headers : {
+            'Content-Type':'application/json',
+            "Accept": "application/json",
+        }
+    })
+
+    const json = await res.json()
+    if(!res.ok){
+        console.log('error')
+    } 
+    console.log('success')
+
 }
   return (
     <form className='mt-10 w-full md:w-1/2' onSubmit={handleSubmit}>
@@ -92,7 +114,7 @@ const handleSubmit = (e)=>{
           required 
         />
       </label>
-      <Select options={options}  onChange={(option) => setTheme(option)} required />
+      <Select options={options}  onChange={(option) => setThemes(option)} value={themes} required />
 <div className='mt-2'>
 <span>Location:</span>
  <APIProvider apiKey={'AIzaSyAoD_LbQQXbvMnByd0fzqzweDXOjOvjylc'} className='m-5'>
@@ -106,7 +128,7 @@ const handleSubmit = (e)=>{
 {showDialog && (
   // displays a dialog to add clicked location
   <InfoWindow position={dialogLocation}>
-    <button className="btn primary" onClick={onAddLocation}>
+    <button className="btn-primary" onClick={onAddLocation}>
       Add this location
     </button>
   </InfoWindow>

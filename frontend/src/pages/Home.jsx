@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
+import { useEffect } from 'react';
+import { formatDistanceToNow } from 'date-fns'
 import {
   APIProvider,
   Map,
@@ -9,92 +11,90 @@ import {
 } from "@vis.gl/react-google-maps";
 export default function Home() {
   const position = { lat: 43.4723, lng: -80.5449};
-  const [tags, setTags] = useState([
-    {
-      id: 1,
-      theme: 'sports',
-      title: 'spikeball game',
-      description: 'A game of spikeball at the park',
-      location: {
-        lat: 43.4726,
-        lng: -80.5450
-      },
-      open: false,
-      image: '⚽️' // Add the image property with the corresponding emoji
-    }, 
-    {
-      id: 2,
-      theme: 'food',
-      title: 'cooking class',
-      description: 'Learn to cook delicious meals',
-      location: {
-        lat: 43.4716,
-        lng: -80.5451
-      },
-      open: false,
-      image: '🍔' // Add the image property with the corresponding emoji
-    },
-    {
-      id: 3,
-      theme: 'music',
-      title: 'concert',
-      description: 'Live music performance',
-      location: {
-        lat: 43.4729,
-        lng: -80.5450
-      },
-      open: false,
-      image: '🎵' // Add the image property with the corresponding emoji
-    },
-    {
-      id: 4,
-      theme: 'art',
-      title: 'painting workshop',
-      description: 'Create your own masterpiece',
-      location: {
-        lat: 43.4726,
-        lng: -80.5448
-      },
-      open: false,
-      image: '🎨' // Add the image property with the corresponding emoji
-    },
-    {
-      id: 5,
-      theme: 'geese',
-      title: 'geese spotting',
-      description: 'Geese spotted here',
-      location: {
-        lat: 43.4736,
-        lng: -80.5448
-      },
-      open: false,
-      image: '🪿' // Add the image property with the corresponding emoji
-    }
-    
-  ])
   const flipOpen = (id) => {
-    setTags(tags.map(tag => {
+    setUpdatedEvents(updatedEvents.map(tag => {
       if(tag.id === id){
         tag.open = !tag.open
       }
       return tag
     }))
   }
+
+      const [updatedEvents, setUpdatedEvents] = useState(null);
+
+      useEffect(() => {
+        const fetchData = async () => {
+          try {
+        const response = await fetch('https://mysite-isdc.onrender.com/api/events', {
+          method: 'GET',
+          headers: {
+            "Accept": "application/json",
+          }
+        });
+        const events = await response.json();
+        console.log(events);
+        setUpdatedEvents(events.objects.map(event => ({
+          ...event,
+          open: false,
+          image: getEmoji(event.theme),
+          location: { lat: event.latitude, lng: event.longitude },
+        })))
+        console.log(updatedEvents)
+          } catch (error) {
+        console.error(error);
+          }
+        };
+
+        fetchData();
+      }, []);
+
+
+  const getEmoji = (theme) => {
+    const emojiMap = {
+      music: '🎵',
+      sports: '⚽️',
+      food: '🍔',
+      technology: '📱',
+      art: '🎨',
+      education: '🎓',
+      business: '💼',
+      health: '🏥',
+      fashion: '👗',
+      travel: '✈️',
+    };
+
+    return emojiMap[theme] || '';
+  }
+  const format = (dateTime) => {
+
+    // Split the string on 'T'
+    let [date, time] = dateTime.split('T');
+    
+    let [hourMinute] = time.split(':00.000Z');
+    
+    let result = `${date} ${hourMinute}`;
+    
+    return result
+  }
+  if(!updatedEvents){ return <div>Loading...</div> 
+  }else {
   return (
     
     <div className='flex justify-center flex-col'>
        <APIProvider apiKey={'AIzaSyAoD_LbQQXbvMnByd0fzqzweDXOjOvjylc'} className='m-5'>
       <div style={{ height: "75dvh", width: "100%" }}>
         <Map defaultZoom={15} defaultCenter={position} mapId={'2e0f38f7239851a2 '}>
-          {tags.map(tag => (
+          {updatedEvents.map(tag => (
             <div key={tag.id}>
             <AdvancedMarker position={tag.location} onClick={()=>flipOpen(tag.id)}>
             <span className='text-3xl'>{tag.image}</span>
             </AdvancedMarker>
           {tag.open &&  <InfoWindow position={tag.location} onCloseClick={()=>flipOpen(tag.id)}>
               <div>
-                <h3>{tag.title}</h3>
+                <h3 className='text-3xl'>{tag.title}</h3>
                 <p>{tag.description}</p>
+                <p>Starts: {format(tag.start_at)}</p>
+                <p>Ends: {format(tag.end_at)}</p>
               </div>
             </InfoWindow> }
             </div>
@@ -108,5 +108,5 @@ export default function Home() {
               <button className='bg-primary rounded-full px-20 flex  my-5 lg:py-0 justify-center' style={{ marginRight: '10px' }}><svg xmlns="http://www.w3.org/2000/svg" width={192} height={192} viewBox="0 0 48 48"><path fill="none" stroke="#ffffff" strokeLinecap="round" strokeLinejoin="round" d="M41.7 42.5s0-1.609-.804-4.826c-.975-3.898-3.219-6.435-8.046-6.435h-17.7c-4.827 0-7.071 2.537-8.046 6.435C6.3 40.89 6.3 42.5 6.3 42.5m9.655-27.348c0 2.996.433 6.281 1.609 8.044C19.06 25.442 21.6 26.413 24 26.413c2.49 0 4.937-.97 6.436-3.217c1.175-1.763 1.61-5.048 1.61-8.044c0-2.247-.805-9.652-8.046-9.652s-8.046 5.907-8.046 9.652M41.7 42.5H6.3"></path></svg></button>
             </div>
             </div>
-  )
+  )}
 }

@@ -5,6 +5,7 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import NewEvent from './pages/NewEvent';
 import { Navigate } from 'react-router-dom';
+import About from './pages/About';
 function App() {
   return (
     <div className="App">
@@ -16,6 +17,7 @@ function App() {
 
 <Route path='/'  element={<Home />}  />
 <Route path='/newEvent' element={<NewEvent />} />
+<Route path='/about' element={<About />} />
 <Route path='/signup' element={<Signup />} />
 <Route path='/login' element={<Login />} />
 </Routes>
