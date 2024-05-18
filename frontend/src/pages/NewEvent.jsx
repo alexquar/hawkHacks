@@ -54,7 +54,7 @@ const handleSubmit = (e)=>{
     e.preventDefault()
 }
   return (
-    <form className='mt-10 w-1/2' onSubmit={handleSubmit}>
+    <form className='mt-10 w-full md:w-1/2' onSubmit={handleSubmit}>
         <h1 className='text-center text-3xl m-3'>New Event</h1>
       <label>
         <span>Title:</span>
@@ -92,12 +92,11 @@ const handleSubmit = (e)=>{
           required 
         />
       </label>
-      <Select options={options}  onChange={(e) => setTheme(e.target.value)}
-          value={theme} required />
-
-<span className='my-5'>Location:</span>
+      <Select options={options}  onChange={(option) => setTheme(option)} required />
+<div className='mt-2'>
+<span>Location:</span>
  <APIProvider apiKey={'AIzaSyAoD_LbQQXbvMnByd0fzqzweDXOjOvjylc'} className='m-5'>
- <div style={{ height: "75dvh", width: "100%" }}>
+ <div className='my-2' style={{ height: "75dvh", width: "100%" }}>
 <Map
   style={{ borderRadius: "20px" }}
   defaultZoom={15}
@@ -116,9 +115,11 @@ const handleSubmit = (e)=>{
 </Map>
 </div>
 </APIProvider>
+</div>
 
 
       <button className="btn-primary my-5">Submit</button>
     </form>
+    
   )
 }
