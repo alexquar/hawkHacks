@@ -1,11 +1,13 @@
 import { useState } from 'react'
-
+import { useAuthContext } from '../hooks/useAuthContext'
 export default function Signup() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const { dispatch } = useAuthContext()
   const handleSubmit = async (e)=>{
     e.preventDefault()
-    const user = {email, password}
+    const user = {email, pass:password}
+    console.log(user)
     const res = await fetch('https://mysite-isdc.onrender.com/users/sign_in', {
         method:'POST',
         body : JSON.stringify(user),
@@ -16,11 +18,9 @@ export default function Signup() {
     })
 
     const json = await res.json()
-    if(!res.ok){
-        console.log(json)
-    } 
-    console.log('success')
 
+    console.log(json)
+    dispatch({ type: 'LOGIN', payload: json })
 }
 
   return (

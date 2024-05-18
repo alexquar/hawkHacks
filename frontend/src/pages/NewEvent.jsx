@@ -9,6 +9,7 @@ import {
     InfoWindow,
   } from "@vis.gl/react-google-maps";
 import Select from 'react-select'
+import { useAuthContext } from '../hooks/useAuthContext';
 const options = [
     { value: 'music', label: 'Music' },
     { value: 'sports', label: 'Sports' },
@@ -24,6 +25,8 @@ const options = [
 ];
 const markerPosition = { lat: 43.4723, lng: -80.5449 };
 export default function NewEvent() {
+  const {user} = useAuthContext()
+  console.log(user)
 const [title,setTitle] = useState('')
 const [description,setDescription] = useState('')
 const [themes,setThemes] = useState(null)
@@ -57,7 +60,8 @@ const handleSubmit = async (e) =>{
         title,
         theme: themes.value,
         latitude: markerPosition.lat,
-        longitude: markerPosition.lng
+        longitude: markerPosition.lng,
+        user_id:user.id
     }
     console.log(event)
     const res = await fetch('https://mysite-isdc.onrender.com/api/events', {
