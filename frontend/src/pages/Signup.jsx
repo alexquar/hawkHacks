@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useAuthContext } from '../hooks/useAuthContext'
-
+import { Link } from 'react-router-dom'
 export default function Signup() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -64,6 +64,7 @@ dispatch({ type: 'LOGIN', payload: json })
           required 
         />
       </label>
+      <p className="my-5 block sm:hidden">Have an account? Login <Link to='/login' className='text-accent'>here</Link>.</p>
       <button className="btn-primary">Submit</button>
     </form>
   )

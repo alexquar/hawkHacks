@@ -119,7 +119,7 @@ const uid = user.id
                 <p className=' my-3' >{tag.description}</p>
                 <p className=' my-3'>Starts: {format(tag.start_at)}</p>
                 <p className=' my-3'>Ends: {format(tag.end_at)}</p>
-                <button onClick={() => deleteEvent(tag.id)} className='btn-primary m-5'>Delete Event</button>
+              {uid == tag.user_id &&  <button onClick={() => deleteEvent(tag.id)} className='btn-primary m-5'>Delete Event</button>}
               </div>
             </InfoWindow> }
             </div>

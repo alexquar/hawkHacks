@@ -8,12 +8,13 @@ import { useAuthContext } from './hooks/useAuthContext';
 import { Navigate } from 'react-router-dom';
 import About from './pages/About';
 import Filter from './pages/Filter';
+import NavBarNoAuth from './components/NavBarNoAuth';
 function App() {
   const {user} = useAuthContext()
   return (
     <div className="App">
     <BrowserRouter>
-<Navbar />
+{user ? <Navbar /> : <NavBarNoAuth/>}
 
 <div className="pages">
 <Routes>
