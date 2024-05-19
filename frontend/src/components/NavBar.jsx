@@ -10,7 +10,7 @@ const navigation = [
   { name: 'Add Event', href: '/newEvent' },
 ]
 const filters = [
-  { value: 'All' },
+  { value: 'all' },
   { value: 'music' },
   { value: 'sports' },
   { value: 'food' },
@@ -38,10 +38,7 @@ export default function Example() {
         dispatch({ type: 'LOGOUT' })
   }
   const handleFilter = (filter) => {
-      if(filter === 'All'){
-        dis({type:'FILTER',payload:null})
-      }
-      dis({type:'FILTER',payload:filter})
+      dis({type:'CHANGE',payload:filter})
   }
   return (
     <Disclosure as="nav" className="bg-secondary">
@@ -97,10 +94,9 @@ export default function Example() {
                   >
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                     {filters.map((filter) => (
-                    <Menu.Item>
+                    <Menu.Item key={filter.value} onClick={()=>{handleFilter(filter.value)}}>
                         {({ active }) => (
                           <p
-                            onClick={()=>{handleFilter(filter.value)}}
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             {filter.value}

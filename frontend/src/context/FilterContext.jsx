@@ -15,7 +15,7 @@ export const filterReducer = (state, action) => {
 
 export const FilterContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(filterReducer, { 
-      filter: null,
+      filter: 'all',
     })
     
     return (

@@ -11,6 +11,7 @@ export default function Signup() {
     e.preventDefault()
     setIsPending(true)
     setError(null)
+    try{
     const user = {email, pass:password}
     console.log(user)
     const res = await fetch('https://mysite-isdc.onrender.com/users/sign_in', {
@@ -27,6 +28,9 @@ export default function Signup() {
     console.log(json)
     setIsPending(false)
     dispatch({ type: 'LOGIN', payload: json })
+  }catch(e){
+    console.log(e)
+  }
     setError('Could not login, try again...')
 }
 

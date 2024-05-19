@@ -6,9 +6,13 @@ export default function Signup() {
   const [password, setPassword] = useState('')
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
+  const [isPending, setIsPending] = useState(false)
+  const [error, setError] = useState(null)
   const { dispatch } = useAuthContext()
   const handleSubmit = async (e)=>{
     e.preventDefault()
+    setIsPending(true)
+    try{
     const user = {email, pass:password, first_name:firstName, last_name:lastName}
     console.log(user)
     const res = await fetch('https://mysite-isdc.onrender.com/users/sign_up', {
@@ -22,8 +26,12 @@ export default function Signup() {
 
     const json = await res.json()
 console.log(json)
-dispatch({ type: 'LOGIN', payload: json })
-
+setIsPending(false)
+dispatch({ type: 'LOGIN', payload: json })}
+catch(e){
+  console.log(e)
+}
+setError('Could not login, try again...')
   }
   return (
     <form className='mt-10 w-1/2' onSubmit={handleSubmit}>
@@ -65,7 +73,9 @@ dispatch({ type: 'LOGIN', payload: json })
         />
       </label>
       <p className="my-5 block sm:hidden">Have an account? Login <Link to='/login' className='text-accent'>here</Link>.</p>
-      <button className="btn-primary">Submit</button>
+      {!isPending && <button className="btn-primary">Submit</button> }
+      {isPending &&  <button className="btn-primary" disabled>Loading...</button>}
+      <p className="my-5 text-red-600 block sm:hidden">{error}</p>
     </form>
   )
 }

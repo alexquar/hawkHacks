@@ -30,7 +30,7 @@ const uid = user.id
       useEffect(() => {
         const fetchData = async () => {
           try {
-        const response = await fetch('https://mysite-isdc.onrender.com/api/events', {
+        const response = await fetch(`https://mysite-isdc.onrender.com/api/events?filter=${filter}`, {
           method: 'GET',
           headers: {
             "Accept": "application/json",
@@ -51,7 +51,7 @@ const uid = user.id
         };
 
         fetchData();
-      }, []);
+      }, [filter]);
 
 
   const getEmoji = (theme) => {
