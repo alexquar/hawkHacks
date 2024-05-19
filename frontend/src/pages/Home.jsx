@@ -115,13 +115,13 @@ const uid = user.id
     shadow-md 
     rounded-md 
     py-3 px-4 my-4 
-    relative 
-    overflow-hidden text-center'>
-                <h1 className='text-3xl text-primary my-3'>{tag.title}</h1>
+    relative max-w-xs
+    overflow-clip text-center'>
+                <h1 className='text-3xl text-primary my-3 px-1'>{tag.title}</h1>
                 <p className=' my-3' >{tag.description}</p>
                 <p className=' my-3'>Starts: {format(tag.start_at)}</p>
                 <p className=' my-3'>Ends: {format(tag.end_at)}</p>
-              {uid == tag.user_id &&  <button onClick={() => deleteEvent(tag.id)} className='btn-primary m-5'>Delete Event</button>}
+              {uid == tag.user_id &&  <button onClick={() => deleteEvent(tag.id)} className='bg-primary text-center text-white hover:text-primary hover:bg-white rounded-full p-3 my-5'>Delete Event</button>}
               </div>
             </InfoWindow> }
             </div>

@@ -29,7 +29,6 @@ const markerPosition = { lat: 43.4723, lng: -80.5449 };
 export default function NewEvent() {
   const {user} = useAuthContext()
   const navigate = useNavigate()
-  console.log(user)
 const [title,setTitle] = useState('')
 const [description,setDescription] = useState('')
 const [themes,setThemes] = useState(null)

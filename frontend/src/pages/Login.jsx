@@ -29,9 +29,11 @@ export default function Signup() {
     setIsPending(false)
     dispatch({ type: 'LOGIN', payload: json })
   }catch(e){
+    console.log('hi')
     console.log(e)
-  }
+    setIsPending(false)
     setError('Could not login, try again...')
+  }
 }
 
   return (
@@ -58,7 +60,7 @@ export default function Signup() {
       <p className="my-5 block sm:hidden">Don't have an account? Signup <Link to='/signup' className='text-accent'>here</Link>.</p>
     {!isPending &&  <button className="btn-primary">Submit</button>}
     {isPending &&  <button className="btn-primary" disabled>Loading...</button>}
-      <p className="my-5 text-red-600 block sm:hidden">{error}</p>
+    {error &&  <p className="my-5 text-center text-red-600 block">{error}</p>}
 
     </form>
   )
