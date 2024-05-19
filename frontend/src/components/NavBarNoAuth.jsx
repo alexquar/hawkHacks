@@ -14,7 +14,7 @@ function classNames(...classes) {
 
 export default function Example() {
   return (
-    <Disclosure as="nav" className="bg-secondary">
+    <Disclosure as="nav" className="bg-secondary py-2">
          {({ open }) => (
             <div>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -32,7 +32,7 @@ export default function Example() {
                       <Link
                         key={item.name}
                         to={item.href}
-                        className= 'text-words hover:bg-words hover:text-white rounded-md px-3 py-2 text-sm font-medium'
+                        className= 'text-white hover:bg-white hover:text-primary rounded-md px-3 py-2 text-sm font-medium'
                       >
                         {item.name}
                       </Link>

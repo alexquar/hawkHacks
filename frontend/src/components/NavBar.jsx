@@ -41,7 +41,7 @@ export default function Example() {
       dis({type:'CHANGE',payload:filter})
   }
   return (
-    <Disclosure as="nav" className="bg-secondary">
+    <Disclosure as="nav" className="bg-secondary py-2">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -66,7 +66,7 @@ export default function Example() {
                       <Link
                         key={item.name}
                         to={item.href}
-                        className= 'text-words hover:bg-words hover:text-white rounded-md px-3 py-2 text-sm font-medium'
+                        className= 'text-white hover:bg-white hover:text-primary rounded-md px-3 py-2 text-sm font-medium'
                       >
                        {  item.name}
                       </Link>
@@ -77,10 +77,10 @@ export default function Example() {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 
-              <Menu as="div" className="relative ml-3">
+              <Menu as="div" className="hidden sm:block relative ml-3">
                   <div>
                     <Menu.Button className="relative flex">
-                      <span className='text-words hover:bg-words hover:text-white rounded-md px-3 py-2 text-sm font-medium'>Filter by Themes</span>
+                      <span className='text-white hover:bg-white hover:text-primary rounded-md px-3 py-2 text-sm font-medium'>Filter by Themes</span>
                     </Menu.Button>
                   </div>
                   <Transition
@@ -117,7 +117,7 @@ export default function Example() {
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">Open user menu</span>
                       <img
-                        className="h-12 w-12 rounded-full"
+                        className="h-14 w-14 rounded-full"
                         src={logo}
                         alt=""
                       />

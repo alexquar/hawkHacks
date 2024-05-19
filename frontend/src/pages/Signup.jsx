@@ -30,8 +30,10 @@ setIsPending(false)
 dispatch({ type: 'LOGIN', payload: json })}
 catch(e){
   console.log(e)
+  setIsPending(false)
+  setError('Could not signup, try again...')
+
 }
-setError('Could not login, try again...')
   }
   return (
     <form className='mt-10 w-1/2' onSubmit={handleSubmit}>
@@ -75,7 +77,7 @@ setError('Could not login, try again...')
       <p className="my-5 block sm:hidden">Have an account? Login <Link to='/login' className='text-accent'>here</Link>.</p>
       {!isPending && <button className="btn-primary">Submit</button> }
       {isPending &&  <button className="btn-primary" disabled>Loading...</button>}
-      <p className="my-5 text-red-600 block sm:hidden">{error}</p>
+      {error && <p className="my-5 text-red-600 block text-center">{error}</p>}
     </form>
   )
 }
