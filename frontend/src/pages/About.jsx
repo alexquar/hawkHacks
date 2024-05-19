@@ -8,7 +8,7 @@ return (
             <div className="hero-content text-center">
                 <div className="max-w-lg">
                     <h1 className="text-5xl font-bold">Hey there!</h1>
-                    <p className="py-6 mx-4 md:mx-0 ">Welcome to Geese Spotter. We're here to help you find your place on campus. You can use this site to find current events in a wide range of categories accross the University of Waterloo Campus!</p>
+                    <p className="py-6 mx-4 md:mx-0 ">Welcome to Geese Spotter. We're here to help you find your place at university. You can use this site to find current events in a wide range of categories accross the University of Waterloo Campus!</p>
                     <Link to='/' className="bg-primary text-center text-white hover:text-primary hover:bg-white rounded-full p-3 my-5">Get Started</Link>
                 </div>
             </div>
