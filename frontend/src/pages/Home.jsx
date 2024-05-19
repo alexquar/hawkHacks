@@ -1,4 +1,3 @@
-import React, { useId } from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useFilterContext } from '../hooks/useFilterContext';
@@ -6,7 +5,6 @@ import {
   APIProvider,
   Map,
   AdvancedMarker,
-  Pin,
   InfoWindow,
 } from "@vis.gl/react-google-maps";
 import { useAuthContext } from '../hooks/useAuthContext';
@@ -26,7 +24,6 @@ const uid = user.id
   }
 
       const [updatedEvents, setUpdatedEvents] = useState(null);
-    const [userLocation, setUserLocation] = useState(null);
       useEffect(() => {
         const fetchData = async () => {
           try {
@@ -44,7 +41,6 @@ const uid = user.id
           image: getEmoji(event.theme),
           location: { lat: event.latitude, lng: event.longitude },
         })))
-        console.log(updatedEvents)
           } catch (error) {
         console.error(error);
           }
@@ -84,7 +80,7 @@ const uid = user.id
   }
   const deleteEvent = async (id) => {
     try {
-      const response = await fetch(`https://mysite-isdc.onrender.com/api/events/${id}`, {
+       await fetch(`https://mysite-isdc.onrender.com/api/events/${id}`, {
         method: 'DELETE',
         body : JSON.stringify({user_id:uid}),
         headers: {
@@ -121,7 +117,7 @@ const uid = user.id
                 <p className=' my-3' >{tag.description}</p>
                 <p className=' my-3'>Starts: {format(tag.start_at)}</p>
                 <p className=' my-3'>Ends: {format(tag.end_at)}</p>
-              {uid == tag.user_id &&  <button onClick={() => deleteEvent(tag.id)} className='bg-primary text-center text-white hover:text-primary hover:bg-white rounded-full p-3 my-5'>Delete Event</button>}
+              {uid === tag.user_id &&  <button onClick={() => deleteEvent(tag.id)} className='bg-primary text-center text-white hover:text-primary hover:bg-white rounded-full p-3 my-5'>Delete Event</button>}
               </div>
             </InfoWindow> }
             </div>

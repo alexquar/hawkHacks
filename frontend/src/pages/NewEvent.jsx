@@ -5,9 +5,7 @@ import {useNavigate} from "react-router-dom"
 import {
     APIProvider,
     Map,
-    AdvancedMarker,
     Marker,
-    Pin,
     InfoWindow,
   } from "@vis.gl/react-google-maps";
 import Select from 'react-select'
@@ -25,15 +23,12 @@ const options = [
     { value: 'travel', label: 'Travel' },
     { value: 'goose', label: 'Goose' },
 ];
-const markerPosition = { lat: 43.4723, lng: -80.5449 };
 export default function NewEvent() {
   const {user} = useAuthContext()
   const navigate = useNavigate()
 const [title,setTitle] = useState('')
 const [description,setDescription] = useState('')
 const [themes,setThemes] = useState(null)
-const [long,setLong] = useState(null)
-const [lat,setLat] = useState(null)
 const [startTime,setStartTime] = useState('')
 const [endTime,setEndTime] = useState('')
 const [selectedLocation, setSelectedLocation] = useState({});
@@ -79,7 +74,7 @@ const handleSubmit = async (e) =>{
     if(!res.ok){
         console.log('error')
     } 
-    console.log('success')
+    console.log(json)
     navigate('/')
 }
   return (

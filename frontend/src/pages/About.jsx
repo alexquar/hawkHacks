@@ -16,7 +16,7 @@ return (
         <div className="sm:flex items-center">
             <div className="sm:w-1/2 px-2">
                 <div className="image object-center text-center">
-                    <img src={logo} />
+                    <img src={logo} alt='logo' />
                 </div>
             </div>
             <div className="sm:w-1/2 p-5">

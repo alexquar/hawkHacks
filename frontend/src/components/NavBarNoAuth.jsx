@@ -1,6 +1,5 @@
 
 import { Disclosure} from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link } from "react-router-dom"
 
 const navigation = [
@@ -8,9 +7,6 @@ const navigation = [
   { name: 'Login', href: '/login' }
 ]
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
 
 export default function Example() {
   return (
